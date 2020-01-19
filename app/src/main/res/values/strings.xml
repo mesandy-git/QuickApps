@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">QuickApp</string>
+    <string name="clearSky">CLEARSKY</string>
+    <string name="lift_motor_test">LIFT MOTOR TEST</string>
+    <string name="address">Address :</string>
+    <string name="lift">Lift :</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
