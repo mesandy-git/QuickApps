@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 
-public class ReaderActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
     private ImageView QRScannerBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class ReaderActivity extends AppCompatActivity {
         QRScannerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ReaderActivity.this, ScannerActivity.class));
+                startActivity(new Intent(HomeActivity.this, ScannerActivity.class));
             }
         });
 

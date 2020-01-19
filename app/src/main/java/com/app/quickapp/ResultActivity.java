@@ -43,4 +43,9 @@ public class ResultActivity extends FragmentActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ResultActivity.this , HomeActivity.class));
+    }
 }

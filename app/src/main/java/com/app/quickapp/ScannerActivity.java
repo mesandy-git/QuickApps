@@ -128,6 +128,5 @@ public class ScannerActivity extends AppCompatActivity {
         super.onBackPressed();
         cameraSource.release();
         cameraSource.stop();
-        startActivity(new Intent(ScannerActivity.this, ReaderActivity.class));
     }
 }
