@@ -3,11 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentOne">
+    tools:context=".Fragments.FragmentOne">
 
-    <TextView
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="Third_fragment" />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Third_fragment" />
+        android:scrollbars="vertical"/>
 
 </FrameLayout>

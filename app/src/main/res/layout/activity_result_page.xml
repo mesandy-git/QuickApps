@@ -5,6 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_arrow_back_black_24dp"/>
     <TextView
         android:id="@+id/tvClearSky"
         android:layout_width="match_parent"
@@ -60,11 +68,11 @@
         android:layout_marginTop="10dp"/>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tvLift"
-        android:layout_marginBottom="60dp"
-        android:layout_marginTop="5dp" />
+        android:layout_marginBottom="60dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
