@@ -48,6 +48,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                if(getPermission())
                {
                    startActivityForResult(new Intent(HomeActivity.this, DecoderActivity.class),Result_Code);
+                   overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                }
                break;
             case R.id.send:
@@ -58,6 +59,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     Intent i = new Intent(HomeActivity.this, ResultActivity.class);
                     i.putExtra("id", id.getText().toString());
                     startActivity(i);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
                 break;
         }
@@ -84,6 +86,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Log.i("Log", "Received response for Camera permission request.");
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 startActivityForResult(new Intent(HomeActivity.this, DecoderActivity.class),Result_Code);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 Log.i("Log", "CAMERA permission has now been granted. Showing preview.");
             } else {
                 Log.i("Log", "CAMERA permission was NOT granted.");
@@ -103,6 +106,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 Intent i = new Intent(HomeActivity.this, ResultActivity.class);
                 i.putExtra("id", data.getStringExtra("id"));
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         }else
             super.onActivityResult(requestCode, resultCode, data);
@@ -112,6 +116,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         finish();
     }
 
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+    }
 }
 
 

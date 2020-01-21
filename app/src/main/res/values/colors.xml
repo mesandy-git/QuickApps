@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#23A3C7</color>
+    <color name="colorPrimaryDark">#23A3C7</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="textColor">#4A4A4A</color>
+    <color name="dividerColor">#4A4A4A</color>
+    <color name="bgColor">#F5F5F5</color>
+    <color name="addressColor">#23A3C7</color>
+    <color name="pagerSelectColor">#23A3C7</color>
+    <color name="pagerColor">#B8B8B8</color>
+    <color name="actionBarColor">#333333</color>
+
 </resources>

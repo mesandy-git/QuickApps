@@ -28,7 +28,7 @@ public class FragmentThree extends Fragment {
         View view= inflater.inflate(R.layout.fragment_fragment_three, container, false);
         recyclerView =view.findViewById(R.id.recyclerView);
         createList();
-        myAdapter = new MyAdapter(dataList);
+        myAdapter = new MyAdapter(dataList, getContext());
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -36,19 +36,20 @@ public class FragmentThree extends Fragment {
         return view;
     }
     private void createList() {
+        dataList.clear();
         DataModels myAdapter = new DataModels("(1)","Page 3, This is the 1st", true);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(2)","Page 3, This is the 2nd", false);
+        myAdapter = new DataModels("a","Page 3, This is the 2nd", false);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(3)","Page 3, This is the 3rd", true);
+        myAdapter = new DataModels("b","Page 3, This is the 3rd", true);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(4)","Page 3, This is the 4th", false);
+        myAdapter = new DataModels("c","Page 3, This is the 4th", false);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(5)","Page 3, This is the 5th", true);
+        myAdapter = new DataModels("d","Page 3, This is the 5th", true);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(6)","Page 3, This is the 6th", false);
+        myAdapter = new DataModels("e","Page 3, This is the 6th", false);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(7)","Page 3, This is the 7th", true);
+        myAdapter = new DataModels("f","Page 3, This is the 7th", true);
         dataList.add(myAdapter);
     }
 }

@@ -22,20 +22,20 @@ public class DecoderActivity extends Activity implements QRCodeReaderView.OnQRCo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_decoder);
-            qrCodeReaderView = findViewById(R.id.qrdecoderview);
-            resultTextView = findViewById(R.id.resultTextView);
-            close = findViewById(R.id.close);
-            flash = findViewById(R.id.torch);
-            close.setOnClickListener(this);
-            flash.setOnClickListener(this);
-            qrCodeReaderView.setOnQRCodeReadListener(this);
-            qrCodeReaderView.setQRDecodingEnabled(true);
-            if (getPackageManager() != null){
-                if(getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH))
-                    flash.setVisibility(View.VISIBLE);
-                if(getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_AUTOFOCUS))
-                    qrCodeReaderView.setAutofocusInterval(2000L);
-            }
+        qrCodeReaderView = findViewById(R.id.qrdecoderview);
+        resultTextView = findViewById(R.id.resultTextView);
+        close = findViewById(R.id.close);
+        flash = findViewById(R.id.torch);
+        close.setOnClickListener(this);
+        flash.setOnClickListener(this);
+        qrCodeReaderView.setOnQRCodeReadListener(this);
+        qrCodeReaderView.setQRDecodingEnabled(true);
+        if (getPackageManager() != null){
+            if(getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH))
+                flash.setVisibility(View.VISIBLE);
+            if(getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_AUTOFOCUS))
+                qrCodeReaderView.setAutofocusInterval(2000L);
+        }
     }
 
     @Override
@@ -46,6 +46,7 @@ public class DecoderActivity extends Activity implements QRCodeReaderView.OnQRCo
             i.putExtra("id", text);
             startActivity(i);
             finish();
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
     }
     @Override
@@ -63,6 +64,12 @@ public class DecoderActivity extends Activity implements QRCodeReaderView.OnQRCo
     protected void onPause() {
         super.onPause();
         qrCodeReaderView.stopCamera();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
     @Override

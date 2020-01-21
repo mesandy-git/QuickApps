@@ -29,7 +29,7 @@ public class FragmentOne extends Fragment {
         View view= inflater.inflate(R.layout.fragment_fragment_one, container, false);
         recyclerView =view.findViewById(R.id.recyclerView);
         createList();
-        myAdapter = new MyAdapter(dataList);
+        myAdapter = new MyAdapter(dataList, getContext());
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -38,20 +38,32 @@ public class FragmentOne extends Fragment {
     }
 
     private void createList() {
-        DataModels myAdapter = new DataModels("(1)","Page 1, This is the 1st", true);
+        dataList.clear();
+        DataModels myAdapter = new DataModels("a","Text will be display here Text will be display here " +
+                "Text will be display here", true);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(2)","Page 1, This is the 2nd", false);
+        myAdapter = new DataModels("b","Page 1, This is the 2nd", false);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(3)","Page 1, This is the 3rd", true);
+        myAdapter = new DataModels("c","Text will be display here Text will be display here " +
+                "Text will be display here", true);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(4)","Page 1, This is the 4th", false);
+        myAdapter = new DataModels("d","Page 1, This is the 4th", false);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(5)","Page 1, This is the 5th", true);
+        myAdapter = new DataModels("d","Page 1, This is the 5th", true);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(6)","Page 1, This is the 6th", false);
+        myAdapter = new DataModels("e","Page 1, This is the 6th", false);
         dataList.add(myAdapter);
-        myAdapter = new DataModels("(7)","Page 1, This is the 7th", true);
+        myAdapter = new DataModels("f","Page 1, This is the 7th", true);
         dataList.add(myAdapter);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
 }

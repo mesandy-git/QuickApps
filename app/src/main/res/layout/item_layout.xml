@@ -2,34 +2,51 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:background="@color/bgColor"
+    android:layout_marginBottom="2dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp">
     <TextView
         android:id="@+id/srNo"
-        android:text="(0)"
+        android:text="a"
         android:layout_alignParentLeft="true"
-        android:textSize="18sp"
+        android:textSize="16sp"
+        android:fontFamily="@font/fonts"
+        android:textStyle="normal"
         android:layout_centerVertical="true"
-        android:layout_width="40dp"
-        android:gravity="left"
+        android:layout_width="wrap_content"
+        android:textColor="@color/textColor"
+        android:gravity="center"
+        android:background="@drawable/circle_fill"
         android:layout_height="wrap_content" />
+
 
     <TextView
         android:id="@+id/textView"
-        android:text="Text will be display here"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:textSize="18sp"
+        android:text="Text will be display here Text will be display here Text will be display here"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:fontFamily="@font/fonts"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        android:textStyle="normal"
         android:layout_centerVertical="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:checked="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <ImageView
+        android:id="@+id/checkBox"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/icon_checked3x"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="36dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/textView"/>
 
 </RelativeLayout>
