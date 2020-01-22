@@ -19,6 +19,7 @@
         <activity android:name=".DecoderActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".ThankYou"
+            android:theme="@style/MyThemeNoTitleBar"
             android:screenOrientation="portrait"/>
         <activity android:name=".ResultActivity"
             android:launchMode="singleInstance"

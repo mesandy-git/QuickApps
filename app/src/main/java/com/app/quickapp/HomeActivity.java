@@ -22,7 +22,6 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
-
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView QRScannerBtn, send;
     private EditText id;

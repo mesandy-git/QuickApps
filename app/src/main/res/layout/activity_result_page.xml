@@ -100,8 +100,9 @@
 
         <ImageButton
             android:id="@+id/nxt"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -120,13 +121,33 @@
 
         <ImageView
             android:id="@+id/prv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:visibility="gone"
+            android:focusable="true"
             android:src="@drawable/back_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:padding="10dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp" />
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/submit"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:fontFamily="@font/fonts"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_shape"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/submit"/>
 
     </RelativeLayout>
 

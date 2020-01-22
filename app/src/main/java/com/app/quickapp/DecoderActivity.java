@@ -17,14 +17,14 @@ public class DecoderActivity extends Activity implements QRCodeReaderView.OnQRCo
     private boolean torch= false;
     private TextView resultTextView;
     private QRCodeReaderView qrCodeReaderView;
-    private ImageView close, flash;
+    private ImageView flash;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_decoder);
         qrCodeReaderView = findViewById(R.id.qrdecoderview);
         resultTextView = findViewById(R.id.resultTextView);
-        close = findViewById(R.id.close);
+        ImageView close = findViewById(R.id.close);
         flash = findViewById(R.id.torch);
         close.setOnClickListener(this);
         flash.setOnClickListener(this);

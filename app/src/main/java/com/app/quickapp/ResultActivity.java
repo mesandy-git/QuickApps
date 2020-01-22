@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,29 +19,36 @@ import com.google.android.material.tabs.TabLayout;
 
 public class ResultActivity extends FragmentActivity implements View.OnClickListener{
     private ViewPager viewPager;
-    private MyPagerAdapter myPagerAdapter;
-    private TabLayout tabLayout;
     private ImageButton next;
+    private Button submit;
     private TextView address;
     private ImageView back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_page);
+        submit = findViewById(R.id.submit);
         next = findViewById(R.id.nxt);
         back = findViewById(R.id.prv);
         address = findViewById(R.id.address);
         viewPager = findViewById(R.id.viewPager);
-        myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
+        MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(myPagerAdapter);
-        tabLayout = findViewById(R.id.tab_layout);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager, true);
         next.setOnClickListener(this);
         back.setOnClickListener(this);
-        Intent i = getIntent();
-        if(i.getStringExtra("id") != null)
-            Toast.makeText(this,""+i.getStringExtra("id"),Toast.LENGTH_SHORT);
-            //address.setText(i.getStringExtra("id"));
+        submit.setOnClickListener(this);
+        Intent in = getIntent();
+        if(in.getStringExtra("id") != null)
+            Toast.makeText(this,""+in.getStringExtra("id"),Toast.LENGTH_SHORT);
+            //address.setText(in.getStringExtra("id"));
+        LinearLayout tabStrip = ((LinearLayout) tabLayout.getChildAt(0));
+        tabStrip.setEnabled(false);
+        for(int i = 0; i < tabStrip.getChildCount(); i++) {
+            tabStrip.getChildAt(i).setClickable(false);
+        }
     }
     @Override
     public void onBackPressed() {
@@ -54,15 +62,21 @@ public class ResultActivity extends FragmentActivity implements View.OnClickList
             case R.id.nxt:
                 viewPager.setCurrentItem(viewPager.getCurrentItem()+1, true);
                 back.setVisibility(View.VISIBLE);
-                if (viewPager.getCurrentItem() == 2)
+                if (viewPager.getCurrentItem() == 2){
                     next.setVisibility(View.GONE);
+                    submit.setVisibility(View.VISIBLE);}
                 break;
             case R.id.prv:
                 viewPager.setCurrentItem(viewPager.getCurrentItem()-1, true);
                 next.setVisibility(View.VISIBLE);
+                submit.setVisibility(View.GONE);
                 if (viewPager.getCurrentItem() == 0)
                     back.setVisibility(View.GONE);
                 break;
+            case R.id.submit:
+                startActivity(new Intent(ResultActivity.this , ThankYou.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
         }
     }
 
